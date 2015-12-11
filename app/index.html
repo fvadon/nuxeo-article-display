@@ -79,6 +79,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		
 		<nuxeo-article-language-selector articles={{articles}} selected-article={{selectedArticle}}>
 		</nuxeo-article-language-selector>
+		
+		
+
 
 	</paper-menu>		
 		
@@ -106,20 +109,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <!-- Main Content -->
         <div class="content">
-          <iron-pages attr-for-selected="data-route" selected="{{route}}">
-
-            <section data-route="home">
-				
-		  	  <paper-card heading="Entered Ref" elevation="2">
-		  	    <div class="card-content">{{articleReference}}</div>
-		  	  </paper-card>
 			  
 		  	  <paper-card heading="Article Kind" elevation="2">
 		  	    <div class="card-content">{{selectedArticle.properties.publication:kind}}</div>
 		  	  </paper-card>
 
-            </section>
+          <iron-pages attr-for-selected="data-route" selected="{{selectedArticle.properties.publication:kind}}">
 
+            <section data-route="Full Page">
+				<paper-material elevation="1">
+								<img src="http://ppimedia.cloud.nuxeo.com/nuxeo/nxpicsfile/default/{{selectedArticle.properties.publication:asset_id_1}}/Medium:content/">
+				</paper-material>
+				<paper-material elevation="1" inner-h-t-m-l="{{selectedArticle.properties.publication:paragraph_1}}">				
+				</paper-material>
+				<paper-material elevation="1">
+								<img src="http://ppimedia.cloud.nuxeo.com/nuxeo/nxpicsfile/default/{{selectedArticle.properties.publication:asset_id_2}}/Medium:content/">
+				</paper-material>
+				<paper-material elevation="1" inner-h-t-m-l="{{selectedArticle.properties.publication:paragraph_2}}">				
+				</paper-material>
+            </section>
+            <section data-route="Flyer">
+				<paper-material elevation="1">
+								<img src="http://ppimedia.cloud.nuxeo.com/nuxeo/nxpicsfile/default/{{selectedArticle.properties.publication:asset_id_1}}/Medium:content/">
+				</paper-material>
+				<paper-material elevation="1" inner-h-t-m-l="{{selectedArticle.properties.publication:paragraph_1}}">				
+				</paper-material>
+            </section>
 			
 
           </iron-pages>
