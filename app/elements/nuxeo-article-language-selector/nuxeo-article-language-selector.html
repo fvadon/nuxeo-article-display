@@ -22,9 +22,9 @@ Example:<nuxeo-article-language-selector articles={{articles}} selected-article=
 <dom-module id="nuxeo-article-language-selector">
 	<template>
 		<paper-menu label="Available Languages">
-		<paper-listbox class="dropdown-content" on-iron-select="_articleSelected">
+		<paper-listbox class="dropdown-content articleDisplay" on-iron-select="_articleSelected">
 			<template is="dom-repeat" items="[[articles]]">
-				<paper-item>[[item.properties.publication:language]]</paper-item>
+				<paper-item class="articleDisplay">[[item.properties.publication:language]]</paper-item>
 			</template>
 		</paper-listbox>
 	</paper-menu>
